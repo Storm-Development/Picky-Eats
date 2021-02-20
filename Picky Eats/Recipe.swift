@@ -7,9 +7,11 @@
 
 import Foundation
 
-struct Recipe {
-    var IngredientList: [Ingredient]
-    var steps: [String]
+struct Recipe: Codable {
     var name: String
-    var estimatedTime: String
+    var estimate: String
+    var steps: [String]
+    var ingredientList: [Ingredient]
+
+
 }

@@ -1,0 +1,25 @@
+{
+   "data":[
+      {
+         "recipe":{
+            "name":"testNachos",
+            "estimate":"1 minute",
+            "steps":"1. plate the chips, 2. spread cheese over chips, 3. put in microwave covered with wrap for 30 seconds, 4. enjoy",
+            "ingredientList":[
+               {
+                  "name":"Restaurant Style Chips",
+                  "generalName":"Chips",
+                  "quantity":0.5,
+                  "measurment":"Lbs"
+               },
+               {
+                  "name":"Chedder Shredded Cheese",
+                  "generalName":"Cheese",
+                  "quantity":0.25,
+                  "measurment":"c"
+               }
+            ]
+         }
+      }
+   ]
+}

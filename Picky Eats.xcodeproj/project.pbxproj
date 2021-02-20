@@ -17,6 +17,7 @@
 		C7B8F44325E15B5A00AA31E4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44225E15B5A00AA31E4 /* Recipe.swift */; };
 		C7B8F44625E15BC900AA31E4 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44525E15BC900AA31E4 /* Ingredient.swift */; };
 		C7B8F44925E15BE800AA31E4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44825E15BE800AA31E4 /* UserInfo.swift */; };
+		C7B8F44C25E160FB00AA31E4 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = C7B8F44B25E160FB00AA31E4 /* Test.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C7B8F44225E15B5A00AA31E4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C7B8F44525E15BC900AA31E4 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C7B8F44825E15BE800AA31E4 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		C7B8F44B25E160FB00AA31E4 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				C7B8F44225E15B5A00AA31E4 /* Recipe.swift */,
 				C7B8F44525E15BC900AA31E4 /* Ingredient.swift */,
 				C7B8F44825E15BE800AA31E4 /* UserInfo.swift */,
+				C7B8F44B25E160FB00AA31E4 /* Test.json */,
 			);
 			path = "Picky Eats";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7B8F44C25E160FB00AA31E4 /* Test.json in Resources */,
 				C72DB63C25E084610053E5DB /* Preview Assets.xcassets in Resources */,
 				C72DB63925E084610053E5DB /* Assets.xcassets in Resources */,
 			);
