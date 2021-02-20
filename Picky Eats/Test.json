@@ -1,7 +1,7 @@
 {
    "data":[
       {
-         "recipe":{
+         {
             "name":"testNachos",
             "estimate":"1 minute",
             "steps":"1. plate the chips, 2. spread cheese over chips, 3. put in microwave covered with wrap for 30 seconds, 4. enjoy",
@@ -20,6 +20,51 @@
                }
             ]
          }
+      },
+      {
+         "name":"test pancakes",
+         "estimate":"5 minute",
+         "steps":"1. Heat up a skillet or pan on medium heat, 2. Add dry ingredients to a bowl and mix well, 3. Add butter to ingredients till crumbled in, 4. Add Milk to bowl and mix till slightly sticky, 5. spread mix into pan and cook 2 minutes each side, 6. Enjoy!",
+         "ingredientList":[
+            {
+               "name":"Flour",
+               "generalName":"Flour",
+               "quantity":2.0,
+               "measurment":"c"
+            },
+            {
+               "name":"Milk",
+               "generalName":"Milk",
+               "quantity":0.25,
+               "measurment":"c"
+            },
+            {
+               "name":"Sugar",
+               "generalName":"Sugar",
+               "quantity":1.0,
+               "measurment":"T"
+            },
+            {
+               "name":"Salt",
+               "generalName":"Salt",
+               "quantity":0.25,
+               "measurment":"t"
+            },
+            {
+               "name":"Butter",
+               "generalName":"Butter",
+               "quantity":1.0,
+               "measurment":"T"
+            },
+            {
+               "name":"syrup",
+               "generalName":"Sugar",
+               "quantity":0.25,
+               "measurment":"c"
+            }
+         ]
       }
+   }
+
    ]
 }

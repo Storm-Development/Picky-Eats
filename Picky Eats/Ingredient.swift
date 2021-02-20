@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Ingredient: Codable {
+struct Ingredient: Codable, Hashable {
     var name: String
     var generalName: String
     var quantity: Float

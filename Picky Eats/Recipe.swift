@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Codable {
+struct Recipe: Codable, Hashable {
     var name: String
     var estimate: String
     var steps: [String]

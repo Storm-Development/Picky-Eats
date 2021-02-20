@@ -9,19 +9,30 @@ import SwiftUI
 
 struct LogIn: View {
     // Need to save off the base username for multiple sessions
-    @State public var userName: String = "User"
+    @ObservedObject public var observedUser: observableUser
+    @ObservedObject public var cookBook: CookBook
     @State public var buttonBacking: Color = Color("GeneralBackDrop")
 
     var body: some View {
-        ZStack{
+            ZStack{
             backDrop(back: Gradient(colors: [Color("GeneralBackDrop"), Color("TextBackDrop")]))
             VStack{
                 Spacer(minLength: 25)
-                welcome(userName: $userName)
+                welcome(userName: $observedUser.info.name)
                 Spacer()
-                login(userName: $userName)
+                login(userName: $observedUser.info.name)
                 Spacer()
-                loginButton(buttonBacking: $buttonBacking)
+                NavigationLink(
+                    destination: Prefrence(observedUser: observedUser, cookBook: cookBook),
+                    label: {
+                        Text("Show me Those Recipes")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .frame(width: 260, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.white)
+                            .background(self.buttonBacking)
+                            .shadow(radius: 2)
+                            .cornerRadius(5.0)
+                    })
                 Spacer()
             }
 
@@ -29,14 +40,14 @@ struct LogIn: View {
     }
 
     public func checkUser(){
-        print("Found \(userName)")
+        print("Found \($observedUser.info.name)")
     }
 }
 
 
 struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        LogIn()
+        LogIn(observedUser: observableUser(), cookBook: CookBook())
     }
 }
 
@@ -80,13 +91,13 @@ struct loginButton: View {
 
     var body: some View {
         Button("Show me Those Recipes", action: {
-        // Action will Move User to Prefrence Screen
+            // Action will Move User to Prefrence Screen
         }).font(.system(size: 20, weight: .bold, design: .rounded))
-            .frame(width: 260, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .foregroundColor(.white)
-            .background(buttonBacking)
-            .shadow(radius: 2)
-            .cornerRadius(5.0)
+        .frame(width: 260, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .foregroundColor(.white)
+        .background(buttonBacking)
+        .shadow(radius: 2)
+        .cornerRadius(5.0)
 
     }
 

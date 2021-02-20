@@ -13,3 +13,11 @@ struct UserInfo: Codable {
     var dislikes: [Ingredient]
     var lastSevenRecipes: [Recipe]
 }
+
+class observableUser: ObservableObject {
+    @Published var info: UserInfo
+
+    init(){
+        info = UserInfo(name: "User", likes: [], dislikes: [], lastSevenRecipes: [])
+    }
+}

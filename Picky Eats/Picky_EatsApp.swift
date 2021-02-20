@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct Picky_EatsApp: App {
+    @ObservedObject private var userInfo = observableUser()
+    @ObservedObject private var cookBook = CookBook()
+
     var body: some Scene {
         WindowGroup {
-            LogIn()
+            NavigationView{
+                LogIn(observedUser: userInfo, cookBook: cookBook)
+            }
         }
     }
 }
