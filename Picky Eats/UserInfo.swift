@@ -18,6 +18,6 @@ class observableUser: ObservableObject {
     @Published var info: UserInfo
 
     init(){
-        info = UserInfo(name: "User", likes: [], dislikes: [], lastSevenRecipes: [])
+        info = UserInfo(name: "User", likes: [Ingredient(name: "Whole Milk", generalName: "Milk", quantity: 1.0, measurment: "c")], dislikes: [Ingredient(name: "Avacado", generalName: "Avacado", quantity: 1.0, measurment: "ct")], lastSevenRecipes: [])
     }
 }

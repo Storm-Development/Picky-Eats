@@ -21,22 +21,9 @@ struct Prefrence: View {
                     likesView(ingredientList: $observedUser.info.likes)
                     dislikesView(ingredientList: $observedUser.info.dislikes)
                 }
-                Spacer()
-                ingredientListScrollView(ingredientList: $cookBook.ingredients )
+                ingredientListScrollView(ingredientList: $cookBook.ingredients, likes: $observedUser.info.likes, dislikes: $observedUser.info.dislikes )
             }
         }.navigationBarTitle("\(observedUser.info.name)'s Prefrences", displayMode: .inline)
-    }
-
-    public func inWhere(ingredientFound: Ingredient) -> String {
-
-        if(observedUser.info.likes.contains(ingredientFound)){
-            return "Likes"
-        } else if(observedUser.info.dislikes.contains(ingredientFound)){
-            return "Dislikes"
-        } else {
-            return "NA"
-        }
-
     }
 }
 
@@ -94,7 +81,7 @@ struct dislikesView: View {
 struct mrMood: View {
     var isHappy: Bool = false
     var body: some View {
-        Image(systemName: isHappy ? "love": "trash")
+        Image(systemName: isHappy ? "heart": "trash")
             .renderingMode(.original)
             .resizable()
             .aspectRatio(contentMode: .fit)
@@ -104,12 +91,14 @@ struct mrMood: View {
 
 struct ingredientListScrollView: View {
     @Binding var ingredientList: [Ingredient]
+    @Binding var likes: [Ingredient]
+    @Binding var dislikes: [Ingredient]
     
     var body: some View{
         ScrollView {
-            LazyVStack(spacing: 25, content: {
+            LazyVStack(spacing: 20, content: {
                 ForEach(ingredientList, id: \.self) { ingredient in
-                    ingredientView(ingredient: ingredient)
+                    ingredientView(ingredient: ingredient, likes: $likes, dislikes: $dislikes)
                 }
             })
         }
@@ -119,17 +108,56 @@ struct ingredientListScrollView: View {
 struct ingredientView: View {
     
     var ingredient: Ingredient
-    
+    @Binding var likes: [Ingredient]
+    @Binding var dislikes: [Ingredient]
+
     var body: some View {
         HStack{
             styleText(textBody: Text("\(ingredient.generalName)"))
-        }.frame(width: 200, height: 25, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .background(Color(.black))
-        giveImage()
+            ingImage()
+            likeButton(ingredient: ingredient, ingredientList: $likes, opposingList: $dislikes)
+            likeButton(ingredient: ingredient, ingredientList: $dislikes, opposingList: $likes, shouldLike: false)
+        }.frame(width: 360, height: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+        .background(Color("TextBackDrop"))
+
+    }
+}
+
+struct ingImage: View {
+    var body: some View {
+        Image(systemName: "stop")
+    }
+}
+
+struct likeButton: View {
+    var ingredient: Ingredient
+    @Binding var ingredientList: [Ingredient]
+    @Binding var opposingList: [Ingredient]
+    var shouldLike: Bool = true
+
+    var body: some View {
+        Button(shouldLike ? "Like" : "Dislike") {
+            checkIngredients()
+        }
     }
 
-    func giveImage() -> Image? {
-
-        return nil
+    func checkIngredients(){
+        if(ingredientList.contains(ingredient)){
+            guard let index = ingredientList.firstIndex(of: ingredient) else {
+                return
+            }
+            ingredientList.remove(at: index)
+            print("popped \(ingredient.name) from \(shouldLike ? "Like" : "Dislike")")
+        } else {
+            ingredientList.append(ingredient)
+            if(opposingList.contains(ingredient)){
+                guard let index = opposingList.firstIndex(of: ingredient) else {
+                    return
+                }
+                opposingList.remove(at: index)
+                print("popped \(ingredient.name) from \(shouldLike ? "DisLike" : "Like")")
+            }
+            print("append \(ingredient.name) from \(shouldLike ? "Like" : "Dislike")")
+        }
     }
 }

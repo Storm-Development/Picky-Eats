@@ -13,7 +13,7 @@ class CookBook: ObservableObject {
 
     init(){
         recipes = []
-        ingredients = [Ingredient(name: "Chedder", generalName: "Cheese", quantity: 1.0, measurment: "c"),Ingredient(name: "Nacho Chips", generalName: "Chips", quantity: 0.25, measurment: "lbs") ]
+        ingredients = [Ingredient(name: "Chedder", generalName: "Cheese", quantity: 1.0, measurment: "c"),Ingredient(name: "Nacho Chips", generalName: "Chips", quantity: 0.25, measurment: "lbs"), Ingredient(name: "Whole Milk", generalName: "Milk", quantity: 1.0, measurment: "c"), Ingredient(name: "Avacado", generalName: "Avacado", quantity: 1.0, measurment: "ct") ]
     }
 
 }
