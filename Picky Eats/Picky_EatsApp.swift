@@ -11,7 +11,7 @@ import SwiftUI
 struct Picky_EatsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LogIn()
         }
     }
 }

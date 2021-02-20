@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LogIn: View {
     // Need to save off the base username for multiple sessions
     @State public var userName: String = "User"
     @State public var buttonBacking: Color = Color("GeneralBackDrop")
@@ -34,15 +34,15 @@ struct ContentView: View {
 }
 
 
-struct ContentView_Previews: PreviewProvider {
+struct LogIn_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LogIn()
     }
 }
 
-struct backDrop: View {
+public struct backDrop: View {
     var back: Gradient
-    var body: some View {
+    public var body: some View {
         LinearGradient(gradient: back,
                        startPoint: .topLeading,
                        endPoint: .bottomTrailing)
@@ -92,10 +92,10 @@ struct loginButton: View {
 
 }
 
-struct styleText: View {
+public struct styleText: View {
     var textBody: Text
     var bigOrSmol: Bool = false
-    var body: some View {
+    public var body: some View {
         textBody
             .font(.system(size: bigOrSmol ? 30 : 20, weight: .heavy, design: .rounded))
             .foregroundColor(.white)

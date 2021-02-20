@@ -9,12 +9,44 @@ import SwiftUI
 
 struct Prefrence: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack{
+            backDrop(back: Gradient(colors: [Color("GeneralBackDrop"), Color("TextBackDrop")]))
+            VStack{
+            HStack{
+                prefSubView()
+                Spacer()
+                prefSubView()
+            }
+                Spacer()
+            }
+        }
     }
 }
 
 struct Prefrence_Previews: PreviewProvider {
     static var previews: some View {
         Prefrence()
+    }
+}
+
+
+struct prefSubView: View {
+    var body: some View {
+        Text("Taco")
+    }
+}
+
+struct ingredientList: View {
+    var body: some View {
+        Text("Taco")
+    }
+}
+
+struct ingredientView: View {
+    var body: some View {
+
+            Text("Taco")
+
+
     }
 }
