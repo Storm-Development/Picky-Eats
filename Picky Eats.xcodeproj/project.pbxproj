@@ -15,6 +15,7 @@
 		C77D492725E09F79005D16B8 /* RecipePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77D492625E09F79005D16B8 /* RecipePicker.swift */; };
 		C77D492A25E09F90005D16B8 /* UserHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C77D492925E09F90005D16B8 /* UserHistory.swift */; };
 		C79B802025E1944E007A0883 /* CookBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79B801F25E1944E007A0883 /* CookBook.swift */; };
+		C79B802325E1A327007A0883 /* TabBarHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79B802225E1A327007A0883 /* TabBarHandler.swift */; };
 		C7B8F44325E15B5A00AA31E4 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44225E15B5A00AA31E4 /* Recipe.swift */; };
 		C7B8F44625E15BC900AA31E4 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44525E15BC900AA31E4 /* Ingredient.swift */; };
 		C7B8F44925E15BE800AA31E4 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B8F44825E15BE800AA31E4 /* UserInfo.swift */; };
@@ -32,6 +33,7 @@
 		C77D492625E09F79005D16B8 /* RecipePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePicker.swift; sourceTree = "<group>"; };
 		C77D492925E09F90005D16B8 /* UserHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHistory.swift; sourceTree = "<group>"; };
 		C79B801F25E1944E007A0883 /* CookBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookBook.swift; sourceTree = "<group>"; };
+		C79B802225E1A327007A0883 /* TabBarHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHandler.swift; sourceTree = "<group>"; };
 		C7B8F44225E15B5A00AA31E4 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C7B8F44525E15BC900AA31E4 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		C7B8F44825E15BE800AA31E4 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				C77D492325E09F64005D16B8 /* Prefrence.swift */,
 				C77D492625E09F79005D16B8 /* RecipePicker.swift */,
 				C77D492925E09F90005D16B8 /* UserHistory.swift */,
+				C79B802225E1A327007A0883 /* TabBarHandler.swift */,
 				C72DB63825E084610053E5DB /* Assets.xcassets */,
 				C72DB63D25E084610053E5DB /* Info.plist */,
 				C72DB63A25E084610053E5DB /* Preview Content */,
@@ -163,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79B802325E1A327007A0883 /* TabBarHandler.swift in Sources */,
 				C72DB63725E0845F0053E5DB /* LogIn.swift in Sources */,
 				C77D492425E09F64005D16B8 /* Prefrence.swift in Sources */,
 				C7B8F44625E15BC900AA31E4 /* Ingredient.swift in Sources */,

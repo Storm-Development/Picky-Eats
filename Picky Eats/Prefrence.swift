@@ -22,6 +22,17 @@ struct Prefrence: View {
                     dislikesView(ingredientList: $observedUser.info.dislikes)
                 }
                 ingredientListScrollView(ingredientList: $cookBook.ingredients, likes: $observedUser.info.likes, dislikes: $observedUser.info.dislikes )
+                NavigationLink(
+                    destination: TabBarHandler(observedUser: observedUser, cookBook: cookBook),
+                    label: {
+                        Text("Show me Those Recipes")
+                            .font(.system(size: 20, weight: .bold, design: .rounded))
+                            .frame(width: 260, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .foregroundColor(.white)
+                            .shadow(radius: 2)
+                            .cornerRadius(5.0)
+                    })
+                
             }
         }.navigationBarTitle("\(observedUser.info.name)'s Prefrences", displayMode: .inline)
     }
@@ -33,10 +44,10 @@ struct Prefrence_Previews: PreviewProvider {
     }
 }
 
-struct prefSubView: View {
+public struct prefSubView: View {
     var ingredient: Ingredient
     
-    var body: some View {
+    public var body: some View {
 
         HStack{
             Text("\(ingredient.generalName)")
@@ -44,10 +55,10 @@ struct prefSubView: View {
     }
 }
 
-struct likesView: View {
+public struct likesView: View {
     @Binding var ingredientList: [Ingredient]
     
-    var body: some View {
+    public var body: some View {
         VStack{
             mrMood(isHappy: true)
             ScrollView {
@@ -61,10 +72,10 @@ struct likesView: View {
     }
 }
 
-struct dislikesView: View {
+public struct dislikesView: View {
     @Binding var ingredientList: [Ingredient]
     
-    var body: some View {
+    public var body: some View {
         VStack{
             mrMood()
             ScrollView {
