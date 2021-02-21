@@ -67,7 +67,7 @@ class TestValues {
                                 Ingredient(name: "Cheddar cheese shredded", generalName: "cheese", quantity: 0.25, measurment: "c"),
                                 Ingredient(name: "egg beaten", generalName: "egg", quantity: 1.0, measurment: "N/A"),
                                 Ingredient(name: "soy sauce", generalName: "flavorful spice", quantity: 1.0, measurment: "T"),
-                                Ingredient(name: "flour", generalName: "basic baking", quantity: 1.5, measurment: "c")
+                                Ingredient(name: "flour", generalName: "grain", quantity: 1.5, measurment: "c")
                               ]
         ))
 
@@ -133,13 +133,18 @@ class TestValues {
         //10
         ingredients.append(Ingredient(name: "Cayaenne pepper, Jalepaneo Seeds, or Wasabi", generalName: "hot spice", quantity: 0.0, measurment: "N/A"))
 
+        //11
+        ingredients.append(Ingredient(name: "raddish, onions, zucchini", generalName: "vegetable", quantity: 0.0, measurment: "N/A"))
 
-        Ingredient(name: "zucchini shredded", generalName: "vegetable", quantity: 1.0, measurment: "N/A")
-        Ingredient(name: "rolled oats", generalName: "grain", quantity: 1.5, measurment: "c")
-        Ingredient(name: "Cheddar cheese shredded", generalName: "cheese", quantity: 0.25, measurment: "c")
-        Ingredient(name: "egg beaten", generalName: "egg", quantity: 1.0, measurment: "N/A")
-        Ingredient(name: "soy sauce", generalName: "flavorful spice", quantity: 1.0, measurment: "T")
-        Ingredient(name: "flour", generalName: "basic baking", quantity: 1.5, measurment: "c")
+        //12
+        ingredients.append(Ingredient(name: "Oats, MultiGrain, or Flour", generalName: "hot spice", quantity: 0.0, measurment: "N/A"))
+
+        //13
+        ingredients.append(Ingredient(name: "Cheddar, Swiss, or Munster", generalName: "cheese", quantity: 0.0, measurment: "N/A"))
+
+        //14
+        ingredients.append(Ingredient(name: "Eggs", generalName: "egg", quantity: 0.0, measurment: "N/A"))
+
         return ingredients
     }
 }
