@@ -50,7 +50,7 @@ public struct prefSubView: View {
     public var body: some View {
 
         HStack{
-            Text("\(ingredient.generalName)")
+            Text("\(ingredient.name)")
         }
     }
 }
@@ -124,7 +124,7 @@ struct ingredientView: View {
 
     var body: some View {
         HStack{
-            styleText(textBody: Text("\(ingredient.generalName)"))
+            styleText(textBody: Text("\(ingredient.name)"))
             ingImage()
             likeButton(ingredient: ingredient, ingredientList: $likes, opposingList: $dislikes)
             likeButton(ingredient: ingredient, ingredientList: $dislikes, opposingList: $likes, shouldLike: false)
