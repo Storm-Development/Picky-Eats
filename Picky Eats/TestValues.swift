@@ -71,6 +71,80 @@ class TestValues {
                               ]
         ))
 
+        //5
+        recipes.append(Recipe(name: "Stuffed Burgers",
+                              estimate: "30 minutes",
+                              steps: ["Heat grill to high and lightly oil","mix the Worcetershire, ground beef, and seasonsing together making 10 patties. ","Place the filling betwen two patties and seal the edges", "Gril for 8 minutes per a side and then plate and enjoy"], ingredientList: [
+                                Ingredient(name: "Ground Beef", generalName: "beef", quantity: 2.5, measurment: "Lb"),
+                                Ingredient(name: "Worcetershire sauce", generalName: "flavorful spice", quantity: 3.0, measurment: "T"),
+                                Ingredient(name: "Hickory Seasoning", generalName: "flavorful spice", quantity: 1.0, measurment: "t"),
+                                Ingredient(name: "Salt and Pepper", generalName: "basic spice", quantity: 0.0, measurment: "N/A"),
+                                Ingredient(name: "Onions Chopped", generalName: "vegetable", quantity: 1.0, measurment: "c"),
+                                Ingredient(name: "Mushrooms Chopped", generalName: "mushroom", quantity: 1.0, measurment: "c"),
+                                Ingredient(name: "Ham Chopped Pre-Cooked", generalName: "pork", quantity: 1.0, measurment: "c"),
+                                Ingredient(name: "Cheddar cheese", generalName: "cheese", quantity: 1.5, measurment: "c")
+                              ]
+        ))
+
+        //7
+        recipes.append(Recipe(name: "Buffalo Chicken Pizza",
+                              estimate: "15 minutes",
+                              steps: ["Preheat oven to 425", "Mix chicken with the butter and hot suace", "Spread the salad dressing over crust to taste", "Cover crust with chicken and cheese","Bake for roughly 8 minutes"], ingredientList: [
+                                Ingredient(name: "Chicken breasts cubed and pre-cooked", generalName: "chicken", quantity: 3.0, measurment: "N/A"),
+                                Ingredient(name: "Melted butter", generalName: "oil", quantity: 2.0, measurment: "T"),
+                                Ingredient(name: "Hot Sauce", generalName: "hot spice", quantity: 2.0, measurment: "oz"),
+                                Ingredient(name: "Blue cheese dressing", generalName: "oil", quantity: 8.0, measurment: "oz"),
+                                Ingredient(name: "Premade Pizza Crust", generalName: "grain", quantity: 16.0, measurment: "in"),
+                                Ingredient(name: "Shredded mozzarella cheese", generalName: "cheese", quantity: 8.0, measurment: "oz"),
+                              ]
+        ))
+
+        //8
+        recipes.append(Recipe(name: "Easy Chicken Parm",
+                              estimate: "30 minutes",
+                              steps: ["Preheat oven to 425","Combine mayo with cheese in bowl","place breast on baaking sheet and coat with mayo and bread crumbs","Bake for 20 minutes"], ingredientList: [
+                                Ingredient(name: "Chicken breast", generalName: "chicken", quantity: 4.0, measurment: "N/A"),
+                                Ingredient(name: "Mayo", generalName: "oil", quantity: 0.5, measurment: "c"),
+                                Ingredient(name: "Italian dried bread crumbs", generalName: "grain", quantity: 4.0, measurment: "t"),
+                                Ingredient(name: "grated Parmesan", generalName: "cheese", quantity: 0.25, measurment: "c"),
+                              ]
+        ))
+
+        //9
+        recipes.append(Recipe(name: "Cauliflower Mac-N-Cheese",
+                              estimate: "30 minutes",
+                              steps: ["Bring a pot of salted water to a boil and cook the macaroni roughly 8 minutes and drain.","Steam cauliflower in a suacepan coverd for roughly 5 minutes", "Blend steamed cauliflower","Put suacepan on medium heat and add oil and flour. Cook until a thick paste forms roughlty 2 minutes","Add Milk to pan strring for roughly 3 minutes.","Mix all ingredients and then serve"], ingredientList: [
+                                Ingredient(name: "Elbow Macaroni", generalName: "grain", quantity: 1.5, measurment: "c"),
+                                Ingredient(name: "cauliflower", generalName: "vegetable", quantity: 0.5, measurment: "c"),
+                                Ingredient(name: "Olive oil", generalName: "oil", quantity: 1.0, measurment: "T"),
+                                Ingredient(name: "Milk", generalName: "milk", quantity: 0.5, measurment: "c"),
+                                Ingredient(name: "Flour", generalName: "grain", quantity: 1.0, measurment: "T"),
+                                Ingredient(name: "Cheddar cheese shredded", generalName: "cheese", quantity: 1.5, measurment: "c"),
+                                Ingredient(name: "cream cheese", generalName: "cheese", quantity: 8.0, measurment: "oz"),
+                                Ingredient(name: "salt", generalName: "basic spice", quantity: 0.5, measurment: "t"),
+                                Ingredient(name: "pepper", generalName: "basic spice", quantity: 0.125, measurment: "t")
+                              ]
+        ))
+
+        //10
+        recipes.append(Recipe(name: "crispy Oraanger Beef",
+                              estimate: "1 hour 5 minutes",
+                              steps: ["Lay out beef strips on baking sheet, dry for 30 minutes", "In a small bowl mix the sugar, vinegar, orange concetrate, salt, and soy sauce.","Combine rice and water in saucepan, bring to boil and reduce to medium-low heat simmering for about 20 minutes", "Heal oil in wok over medium-high heat", "Toss beef in cornstoach, before frying in the oil and small batches. Set aside coooked beef and drail all but 1 tabelspoon of oil from wok", "Add orange zest, ginger and garlic to the oil cooking till fragrant", "Add soy sauce to the wok, bringing to the boild and cooking for roughly 5 minutes", "Add beef stricitng to coat, after throughly coated server over rice and add broccoli"], ingredientList: [
+                                Ingredient(name: "top sirloin sliced", generalName: "beef", quantity: 1.5, measurment: "Lb"),
+                                Ingredient(name: "Sugar", generalName: "sugar", quantity: 0.33, measurment: " c"),
+                                Ingredient(name: "rice wine vinegar", generalName: "vinegar", quantity: 0.33, measurment: "c"),
+                                Ingredient(name: "orange juice concetrate", generalName: "citrus", quantity: 2.0, measurment: "T"),
+                                Ingredient(name: "Salt", generalName: "basic spice", quantity: 1.0, measurment: "t"),
+                                Ingredient(name: "Soy Sauce", generalName: "flavorful spice", quantity: 1.0, measurment: "T"),
+                                Ingredient(name: "long Grain Rice", generalName: "grain", quantity: 1.0, measurment: "c"),
+                                Ingredient(name: "Cornstarch", generalName: "grain", quantity: 0.25, measurment: "c"),
+                                Ingredient(name: "Orange Zest", generalName: "citrus", quantity: 2.0, measurment: "t"),
+                                Ingredient(name: "grated ginger", generalName: "flavorful spice", quantity: 3.0, measurment: "T"),
+                                Ingredient(name: "Minced Garlic", generalName: "flavorful spice", quantity: 1.5, measurment: "T"),
+                                Ingredient(name: "Broccoli florets", generalName: "vegetable", quantity: 8.00, measurment: "N/A"),
+                                Ingredient(name: "Vegetable Oil", generalName: "oil", quantity: 2.0, measurment: "c")
+                              ]
+        ))
 
         return recipes
     }
@@ -144,6 +218,19 @@ class TestValues {
 
         //14
         ingredients.append(Ingredient(name: "Eggs", generalName: "egg", quantity: 0.0, measurment: "N/A"))
+
+        //15
+        ingredients.append( Ingredient(name: "Beef or Steak", generalName: "beef", quantity: 0.0, measurment: "N/A"))
+
+        //16
+        ingredients.append(Ingredient(name: "Mushrooms", generalName: "mushroom", quantity: 0.0, measurment: "N/A"))
+
+        //17
+        ingredients.append(Ingredient(name: "Ham, Bacon or Pork", generalName: "pork", quantity: 0.0, measurment: "N/A"))
+
+        //18
+        ingredients.append( Ingredient(name: "various vinegar", generalName: "vinegar", quantity: 0.0, measurment: "N/A"))
+
 
         return ingredients
     }
