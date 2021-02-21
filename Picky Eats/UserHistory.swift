@@ -15,7 +15,6 @@ struct UserHistory: View {
         ZStack{
             backDrop(back: Gradient(colors: [Color("GeneralBackDrop"), Color("TextBackDrop")]))
             VStack{
-                Text("Hello, \(observedUser.info.name) welcome to your history")
                 HStack{
                     Image(systemName: "person.circle").renderingMode(.original)
                         .resizable()

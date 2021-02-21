@@ -211,7 +211,7 @@ class TestValues {
         ingredients.append(Ingredient(name: "raddish, onions, zucchini", generalName: "vegetable", quantity: 0.0, measurment: "N/A"))
 
         //12
-        ingredients.append(Ingredient(name: "Oats, MultiGrain, or Flour", generalName: "hot spice", quantity: 0.0, measurment: "N/A"))
+        ingredients.append(Ingredient(name: "Oats, MultiGrain, or Flour", generalName: "grain", quantity: 0.0, measurment: "N/A"))
 
         //13
         ingredients.append(Ingredient(name: "Cheddar, Swiss, or Munster", generalName: "cheese", quantity: 0.0, measurment: "N/A"))

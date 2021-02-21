@@ -16,22 +16,18 @@ struct RecipePicker: View {
         ZStack{
             backDrop(back: Gradient(colors: [Color("GeneralBackDrop"), Color("TextBackDrop")]))
             VStack{
-                Text("Hello, \(observedUser.info.name) welcome to the Recipe Pikcer")
                 HStack{
                     Button("Select a Random Recipe", action: {
-                        guard cookBook.recipes.count > 0 else {return}
-                        let randIndex = Int.random(in: 0...cookBook.recipes.count - 1)
-                        // keep running random till the following criteria are met
-                        // 1. Recipe must contain at least 1 liked item
-                        // 2. Recipe must contain 1 disliked item no more no less
-                        currentRecipe = cookBook.recipes[randIndex]
+                        findRecipe()
                     })
+                    ScrollView {
                     LazyVStack(spacing: 20, content: {
                         ForEach(cookBook.recipes, id: \.self) { item in
                             Text("\(item.name)")
                         }
                     })
-                }
+                    }
+                }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Spacer()
                 RecipeView(recipe: $currentRecipe)
             }
@@ -39,6 +35,45 @@ struct RecipePicker: View {
         }
         .navigationBarTitle("History")
         .navigationBarHidden(true)
+    }
+
+    // Look into creating a list to randomly select from instead of randomly selecting from main list
+    func findRecipe() {
+        guard cookBook.recipes.count > 0 else {return}
+        var recipeToCheck: Recipe?
+        while(!approvedMeal(recipe: recipeToCheck)){
+            let randIndex = Int.random(in: 0...cookBook.recipes.count - 1)
+            recipeToCheck = cookBook.recipes[randIndex]
+
+        }
+
+        currentRecipe = recipeToCheck
+    }
+
+    func approvedMeal(recipe: Recipe?) -> Bool{
+        guard let approvedRecipe = recipe else { return false}
+
+        var likeCondition = false
+        var dislikeCount = 0
+
+        approvedRecipe.ingredientList.forEach { ingredient in
+            if(observedUser.info.likes.contains { (value) -> Bool in
+                return value.generalName == ingredient.generalName
+            }) {
+                likeCondition = true
+            }
+        }
+
+        approvedRecipe.ingredientList.forEach { ingredient in
+            if(observedUser.info.dislikes.contains { (value) -> Bool in
+                return value.generalName == ingredient.generalName
+            }) {
+                dislikeCount += 1
+            }
+        }
+
+        return (likeCondition && dislikeCount == 1)
+
     }
 }
 
@@ -62,22 +97,27 @@ struct RecipeView: View {
             VStack{
                 HStack{
                     Text(checkedRecipe.name)
-                    Text("Recipe should take roughly: \(checkedRecipe.estimate)")
+                    Text("Estimated Time: \(checkedRecipe.estimate)")
                 }
-                HStack{
+                Spacer()
+                HStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 10, content: {
                     //Ingredient List
+                    ScrollView {
                     LazyVStack(spacing: 20, content: {
                         ForEach(checkedRecipe.ingredientList, id: \.self) { ingredient in
                             Text("\(measurmentForIngredient(ingredient: ingredient)) \(ingredient.name)")
                         }
                     })
+                    }
                     //Steps
+                    ScrollView {
                     LazyVStack(spacing: 20, content: {
                         ForEach(checkedRecipe.steps, id: \.self) { step in
                             Text(step)
                         }
                     })
-                }
+                    }
+                })
             })
 
     }
