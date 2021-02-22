@@ -53,6 +53,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C707967F25E33F790090C418 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C72DB63625E0845F0053E5DB /* LogIn.swift */,
+				C77D492625E09F79005D16B8 /* RecipePicker.swift */,
+				C79B802225E1A327007A0883 /* TabBarHandler.swift */,
+				C77D492325E09F64005D16B8 /* Prefrence.swift */,
+				C77D492925E09F90005D16B8 /* UserHistory.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C707968025E33F870090C418 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7B8F44B25E160FB00AA31E4 /* Test.json */,
+				C79B802525E1F6CB007A0883 /* TestValues.swift */,
+				C79B801F25E1944E007A0883 /* CookBook.swift */,
+				C7B8F44825E15BE800AA31E4 /* UserInfo.swift */,
+				C7B8F44525E15BC900AA31E4 /* Ingredient.swift */,
+				C7B8F44225E15B5A00AA31E4 /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C72DB62825E0845F0053E5DB = {
 			isa = PBXGroup;
 			children = (
@@ -72,21 +97,12 @@
 		C72DB63325E0845F0053E5DB /* Picky Eats */ = {
 			isa = PBXGroup;
 			children = (
+				C707968025E33F870090C418 /* Models */,
+				C707967F25E33F790090C418 /* Views */,
 				C72DB63425E0845F0053E5DB /* Picky_EatsApp.swift */,
-				C72DB63625E0845F0053E5DB /* LogIn.swift */,
-				C77D492325E09F64005D16B8 /* Prefrence.swift */,
-				C77D492625E09F79005D16B8 /* RecipePicker.swift */,
-				C77D492925E09F90005D16B8 /* UserHistory.swift */,
-				C79B802225E1A327007A0883 /* TabBarHandler.swift */,
 				C72DB63825E084610053E5DB /* Assets.xcassets */,
 				C72DB63D25E084610053E5DB /* Info.plist */,
 				C72DB63A25E084610053E5DB /* Preview Content */,
-				C7B8F44225E15B5A00AA31E4 /* Recipe.swift */,
-				C7B8F44525E15BC900AA31E4 /* Ingredient.swift */,
-				C7B8F44825E15BE800AA31E4 /* UserInfo.swift */,
-				C79B801F25E1944E007A0883 /* CookBook.swift */,
-				C79B802525E1F6CB007A0883 /* TestValues.swift */,
-				C7B8F44B25E160FB00AA31E4 /* Test.json */,
 			);
 			path = "Picky Eats";
 			sourceTree = "<group>";

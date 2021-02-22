@@ -23,15 +23,21 @@ struct RecipePicker: View {
                     ScrollView {
                     LazyVStack(spacing: 20, content: {
                         ForEach(cookBook.recipes, id: \.self) { item in
-                            Text("\(item.name)")
+                            Text("\(item.name)").id(UUID())
                         }
                     })
                     }
                 }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Spacer()
                 RecipeView(recipe: $currentRecipe)
+                Button("I Cooked This") {
+                    guard let currentRecipe = currentRecipe else {return}
+                    if(observedUser.info.lastSevenRecipes.count >= 7){
+                        observedUser.info.lastSevenRecipes.removeFirst()
+                    }
+                    observedUser.info.lastSevenRecipes.append(TrackedRecipe(recipe: currentRecipe))
+                }
             }
-
         }
         .navigationBarTitle("History")
         .navigationBarHidden(true)
@@ -95,7 +101,7 @@ struct RecipeView: View {
 
         return AnyView(
             VStack{
-                HStack{
+                VStack{
                     Text(checkedRecipe.name)
                     Text("Estimated Time: \(checkedRecipe.estimate)")
                 }
@@ -113,7 +119,8 @@ struct RecipeView: View {
                     ScrollView {
                     LazyVStack(spacing: 20, content: {
                         ForEach(checkedRecipe.steps, id: \.self) { step in
-                            Text(step)
+                            // replace 0 with index
+                            Text(formatSteps(step: step, count: 0 ))
                         }
                     })
                     }
@@ -124,6 +131,15 @@ struct RecipeView: View {
 
     func measurmentForIngredient(ingredient: Ingredient) -> String {
 
-        return ""
+        if(ingredient.measurment == "N/A"){
+            return  "\(ingredient.quantity) "
+        } else {
+            return "\(ingredient.quantity) \(ingredient.measurment)'s"
+        }
+
+    }
+
+    func formatSteps(step: String, count: Int) -> String{
+        return "Step \(count): \(step)"
     }
 }

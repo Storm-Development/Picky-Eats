@@ -11,13 +11,13 @@ struct UserInfo: Codable {
     var name: String
     var likes: [Ingredient]
     var dislikes: [Ingredient]
-    var lastSevenRecipes: [Recipe]
+    var lastSevenRecipes: [TrackedRecipe]
 }
 
 class observableUser: ObservableObject {
     @Published var info: UserInfo
 
     init(){
-        info = UserInfo(name: "User", likes: [], dislikes: [], lastSevenRecipes: [])
+        info = UserInfo(name: "", likes: [], dislikes: [], lastSevenRecipes: [])
     }
 }

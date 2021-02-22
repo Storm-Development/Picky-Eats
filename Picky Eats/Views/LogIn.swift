@@ -17,15 +17,12 @@ struct LogIn: View {
             ZStack{
             backDrop(back: Gradient(colors: [Color("GeneralBackDrop"), Color("TextBackDrop")]))
             VStack{
-                Spacer(minLength: 25)
                 welcome(userName: $observedUser.info.name)
-                Spacer()
-                login(userName: $observedUser.info.name)
                 Spacer()
                 NavigationLink(
                     destination: Prefrence(observedUser: observedUser, cookBook: cookBook),
                     label: {
-                        Text("Show me Those Recipes")
+                        Text("Set my Prefrences")
                             .font(.system(size: 20, weight: .bold, design: .rounded))
                             .frame(width: 260, height: 80, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .foregroundColor(.white)
@@ -64,24 +61,11 @@ public struct backDrop: View {
 struct welcome: View {
     @Binding var userName: String
     var body: some View {
-        styleText(textBody: Text("Hello \(userName)"), bigOrSmol: true)
-
-    }
-}
-
-struct login: View {
-    @Binding var userName: String
-
-    var body: some View {
-        HStack{
-            Spacer()
-            Spacer()
-            styleText(textBody: Text("Username: "))
-            TextField("Username Input Field", text: $userName).font(.system(size: 20, weight: .light, design: .rounded))
-                .foregroundColor(.white)
-
-        }.padding(20)
-
+        styleText(textBody: Text("Welcome To Picky Eaters"), fontSize: 30.0)
+        Spacer()
+        styleText(textBody: Text("How should we refer to you?"), fontSize: 30.0)
+        TextField("Username", text: $userName).font(.system(size: 20, weight: .bold, design: .rounded))
+            .foregroundColor(.white).multilineTextAlignment(.center)
     }
 }
 
@@ -103,12 +87,18 @@ struct loginButton: View {
 
 }
 
+struct logo: View {
+    var body: some View {
+        Text("LOGO")
+    }
+}
+
 public struct styleText: View {
     var textBody: Text
-    var bigOrSmol: Bool = false
+    var fontSize: Float = 16
     public var body: some View {
         textBody
-            .font(.system(size: bigOrSmol ? 30 : 20, weight: .heavy, design: .rounded))
+            .font(.system(size: CGFloat(fontSize), weight: .heavy, design: .rounded))
             .foregroundColor(.white)
     }
 }
